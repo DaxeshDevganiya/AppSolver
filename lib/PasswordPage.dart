@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:assignment_system/EmailPage.dart';
+import 'package:assignment_system/ForgotPassword.dart';
 import 'package:assignment_system/OtpPage.dart';
 import 'package:assignment_system/domain.dart';
 import 'package:assignment_system/pages/solver/solverDashboard.dart';
@@ -148,6 +149,27 @@ class _PasswordState extends State<Password> {
                           return "Please enter password";
                         }
                       },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForgotPassword()),
+                            );
+                          },
+                          child: Text(
+                            "Forgot Password ?",
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                        )
+                      ],
                     ),
                     SizedBox(
                       height: 20,
